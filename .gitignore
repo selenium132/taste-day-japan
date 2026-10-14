@@ -1,0 +1,17 @@
+.env
+node_modules/
+.wrangler/
+shots/
+docs_raw/
+rules_quote.md
+submit_steps.md
+devpost_text.md
+publish_bitbucket.py
+local_only/
+devpost_text_v3.md
+v3.diff
+v3_changes.md
+# Qloo response data must not be in a public repository (Qloo developer guide)
+eval/qloo_results.json
+eval/qloo_verified.json
+fixtures/replay_recorded*.json

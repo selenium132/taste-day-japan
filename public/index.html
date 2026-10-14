@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taste Day Japan</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+:root { --bg:#faf8f4; --fg:#1d1b18; --muted:#6b665e; --card:#fff; --line:#e4dfd6; --accent:#b3341f; }
+@media (prefers-color-scheme: dark) { :root { --bg:#16140f; --fg:#f1ede4; --muted:#a29b8e; --card:#201d17; --line:#38332a; --accent:#e5775f; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
+h1 { font-size:1.6rem; margin:0 0 4px; } h2 { font-size:1.1rem; margin:28px 0 8px; }
+p.lead { color:var(--muted); margin:0 0 20px; }
+form, .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; }
+label { display:block; font-weight:600; font-size:.9rem; margin-top:12px; }
+input, select { width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--fg); font:inherit; }
+.row { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+button { padding:9px 14px; border-radius:6px; border:1px solid var(--line); background:var(--card); color:var(--fg); font:inherit; cursor:pointer; }
+button.primary { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+button:disabled { opacity:.5; cursor:wait; }
+.banner { margin:14px 0; padding:10px 12px; border-radius:8px; background:#fff3cd; color:#5c4400; font-size:.9rem; }
+.banner.live { background:#e3f4e5; color:#17501f; }
+.stop { display:grid; grid-template-columns:64px 1fr; gap:4px 12px; padding:12px 0; border-top:1px solid var(--line); }
+.stop:first-child { border-top:0; }
+.time { font-variant-numeric:tabular-nums; color:var(--muted); font-weight:600; }
+.name { font-weight:600; } .meta, .why { color:var(--muted); font-size:.9rem; grid-column:2; }
+.err { color:var(--accent); }
+details { margin-top:10px; } summary { cursor:pointer; color:var(--muted); }
+pre { white-space:pre-wrap; word-break:break-word; font-size:.8rem; background:var(--bg); padding:8px; border-radius:6px; border:1px solid var(--line); }
+
+#map { height:340px; border-radius:10px; border:1px solid var(--line); margin:12px 0; background:var(--card); }
+.pin { width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; font-size:.85rem; display:flex; align-items:center; justify-content:center; border:2px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.4); }
+.pin.sample { background:#8a8479; border-style:dashed; }
+.stops { display:grid; gap:10px; }
+.scard { display:grid; grid-template-columns:34px 1fr; gap:2px 12px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px; }
+.num { grid-row:span 4; width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.sample-card .num { background:#8a8479; }
+.scard .name { font-weight:600; } .scard .time { font-weight:400; color:var(--muted); margin-left:6px; font-variant-numeric:tabular-nums; }
+.scard .meta, .scard .why { grid-column:2; }
+.bar { grid-column:2; display:flex; align-items:center; gap:8px; font-size:.8rem; color:var(--muted); }
+.bar .track { flex:1; height:8px; border-radius:4px; background:var(--line); overflow:hidden; max-width:260px; }
+.bar .fill { height:100%; background:var(--accent); }
+.tag-sample { font-size:.72rem; border:1px dashed var(--muted); color:var(--muted); border-radius:4px; padding:0 5px; margin-left:6px; }
+.mapnote { font-size:.8rem; color:var(--muted); margin:-6px 0 8px; }
+footer { margin-top:32px; color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Taste Day Japan</h1>
+  <p class="lead">Tell it the music, films and food you love. An agent asks Qloo's taste graph which places in a Japanese city fit that taste, and builds your day.</p>
+
+  <form id="f">
+    <label for="city">City</label>
+    <select id="city"><option>Tokyo</option><option>Kyoto</option></select>
+    <label for="artists">Favorite artists (up to 3, comma separated)</label>
+    <input id="artists" value="Radiohead, Ryuichi Sakamoto">
+    <label for="movies">Favorite films (up to 3)</label>
+    <input id="movies" value="Lost in Translation">
+    <label for="food">Food you like (up to 3 keywords)</label>
+    <input id="food" value="ramen, coffee">
+    <div class="row">
+      <button class="primary" id="go" type="submit">Plan my day</button>
+      <button type="button" data-preset="0">Example: Tokyo</button>
+      <button type="button" data-preset="1">Example: Kyoto</button>
+    </div>
+  </form>
+
+  <div id="out" aria-live="polite"></div>
+  <footer>Places and affinities come from the Qloo API. Source and license: see the repository (MIT).</footer>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+const presets = [
+  { city: "Tokyo", artists: "Radiohead, Ryuichi Sakamoto", movies: "Lost in Translation", food: "ramen, coffee" },
+  { city: "Kyoto", artists: "Cornelius", movies: "Spirited Away, Tampopo", food: "sushi, ramen" },
+];
+
+let map = null;
+function drawMap(div, stops, sample) {
+  if (map) { map.remove(); map = null; }
+  const pts = stops.filter((s) => s.lat != null && s.lon != null);
+  if (typeof L === "undefined" || !pts.length) { div.append(el("p", "lead", "Map unavailable (the map library did not load or there are no coordinates).")); return; }
+  map = L.map(div, { scrollWheelZoom: false });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+  const ll = pts.map((s) => [s.lat, s.lon]);
+  L.polyline(ll, { color: "#b3341f", weight: 3, opacity: 0.8, dashArray: sample ? "6 6" : null }).addTo(map);
+  pts.forEach((s, i) => {
+    const icon = L.divIcon({ className: "", html: '<div class="pin' + (sample ? " sample" : "") + '">' + (stops.indexOf(s) + 1) + "</div>", iconSize: [28, 28], iconAnchor: [14, 14] });
+    L.marker([s.lat, s.lon], { icon, title: s.name }).addTo(map).bindPopup(s.name + " (" + s.time + ")");
+  });
+  map.fitBounds(ll, { padding: [30, 30], maxZoom: 15 });
+}
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const list = (s) => s.split(",").map((x) => x.trim()).filter(Boolean);
+
+document.querySelectorAll("[data-preset]").forEach((b) => b.addEventListener("click", () => {
+  const p = presets[+b.dataset.preset];
+  $("city").value = p.city; $("artists").value = p.artists; $("movies").value = p.movies; $("food").value = p.food;
+}));
+
+$("f").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const out = $("out"); out.replaceChildren(); $("go").disabled = true;
+  const note = el("p", "lead", "Asking Qloo..."); out.append(note);
+  try {
+    const res = await fetch("/api/plan", { method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ city: $("city").value, traveler: { artists: list($("artists").value), movies: list($("movies").value), food: list($("food").value) } }) });
+    const d = await res.json();
+    out.replaceChildren();
+    if (!res.ok) { out.append(el("p", "err", d.error + (d.detail ? ": " + d.detail : ""))); return; }
+    out.append(el("div", "banner " + (d.mode === "live" ? "live" : ""),
+      d.mode === "live" ? "Live Qloo data." : !d.sample_data ? "Recorded Qloo responses (replayed from a real recording on 2026-10-06, not a live call)." : "Sample data: this deployment is running on hand-written sample responses, not live Qloo results."));
+    if (!d.itinerary) { out.append(el("p", "", d.narrative || "No itinerary could be built.")); }
+    else {
+      out.append(el("h2", "", "Your day in " + d.itinerary.city));
+      const stops = d.itinerary.stops, sample = !!d.sample_data;
+      const mapDiv = el("div"); mapDiv.id = "map"; out.append(mapDiv);
+      if (sample) out.append(el("div", "mapnote", "Pins are drawn from sample coordinates. Restaurant and cafe pins are district-level placeholders, not real venues."));
+      drawMap(mapDiv, stops, sample);
+      const wrap = el("div", "stops");
+      stops.forEach((s, i) => {
+        const c = el("div", "scard" + (sample ? " sample-card" : ""));
+        c.append(el("div", "num", String(i + 1)));
+        const name = el("div", "name", s.name); name.append(el("span", "time", s.time + " " + s.slot));
+        if (sample && /^\[sample\]/.test(s.name)) name.append(el("span", "tag-sample", "placeholder"));
+        c.append(name);
+        if (s.affinity != null) {
+          const bar = el("div", "bar"); const tr = el("div", "track"); const f = el("div", "fill");
+          f.style.width = Math.max(0, Math.min(100, s.affinity * 100)) + "%"; tr.append(f);
+          bar.append(el("span", "", "affinity"), tr, el("span", "", s.affinity.toFixed(2))); c.append(bar);
+        }
+        c.append(el("div", "meta", [s.tags.join(", "), s.km_from_previous != null ? s.km_from_previous + " km from previous stop" : ""].filter(Boolean).join(" · ")));
+        c.append(el("div", "why", s.why));
+        wrap.append(c);
+      });
+      out.append(wrap);
+    }
+    out.append(el("h2", "", "How the agent got there"));
+    const det = el("details"); det.append(el("summary", "", d.trace.length + " tool calls (LLM: " + d.llm + ")"));
+    for (const t of d.trace) {
+      const pre = el("pre", "", t.tool + " " + JSON.stringify(t.input) + "\n  Qloo: " + t.qloo_calls.map((c) => c.path).join(", ") + "\n  -> " + t.summary);
+      det.append(pre);
+    }
+    out.append(det);
+  } catch (e) { out.replaceChildren(el("p", "err", "Request failed: " + e.message)); }
+  finally { $("go").disabled = false; }
+});
+</script>
+</body>
+</html>

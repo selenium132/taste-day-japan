@@ -1,0 +1,2292 @@
+{
+ "source": "sample",
+ "note": "Hand-written sample data, not Qloo output.",
+ "entries": [
+  {
+   "path": "/search",
+   "params": {
+    "query": "Radiohead",
+    "types": "urn:entity:artist"
+   },
+   "response": [
+    {
+     "entity_id": "SAMPLE-artist-radiohead",
+     "name": "Radiohead",
+     "types": [
+      "urn:entity:artist"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "/search",
+   "params": {
+    "query": "Ryuichi Sakamoto",
+    "types": "urn:entity:artist"
+   },
+   "response": [
+    {
+     "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+     "name": "Ryuichi Sakamoto",
+     "types": [
+      "urn:entity:artist"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "/search",
+   "params": {
+    "query": "Cornelius",
+    "types": "urn:entity:artist"
+   },
+   "response": [
+    {
+     "entity_id": "SAMPLE-artist-cornelius",
+     "name": "Cornelius",
+     "types": [
+      "urn:entity:artist"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "/search",
+   "params": {
+    "query": "Lost in Translation",
+    "types": "urn:entity:movie"
+   },
+   "response": [
+    {
+     "entity_id": "SAMPLE-movie-lost-in-translation",
+     "name": "Lost in Translation",
+     "types": [
+      "urn:entity:movie"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "/search",
+   "params": {
+    "query": "Spirited Away",
+    "types": "urn:entity:movie"
+   },
+   "response": [
+    {
+     "entity_id": "SAMPLE-movie-spirited-away",
+     "name": "Spirited Away",
+     "types": [
+      "urn:entity:movie"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "/search",
+   "params": {
+    "query": "Tampopo",
+    "types": "urn:entity:movie"
+   },
+   "response": [
+    {
+     "entity_id": "SAMPLE-movie-tampopo",
+     "name": "Tampopo",
+     "types": [
+      "urn:entity:movie"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "/v2/tags",
+   "params": {
+    "filter.query": "ramen"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "tags": [
+      {
+       "id": "SAMPLE-tag-ramen",
+       "name": "Ramen restaurant",
+       "type": "urn:tag:genre:place"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/tags",
+   "params": {
+    "filter.query": "sushi"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "tags": [
+      {
+       "id": "SAMPLE-tag-sushi",
+       "name": "Sushi restaurant",
+       "type": "urn:tag:genre:place"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/tags",
+   "params": {
+    "filter.query": "coffee"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "tags": [
+      {
+       "id": "SAMPLE-tag-coffee",
+       "name": "Coffee shop (kissaten)",
+       "type": "urn:tag:genre:place"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Tokyo",
+    "filter.tags": null
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-tokyo-tower-records-shibuya",
+       "name": "Tower Records Shibuya",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6595,
+        "lon": 139.6987
+       },
+       "properties": {
+        "address": "Tower Records Shibuya, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-record-store",
+         "name": "Record store"
+        },
+        {
+         "id": "SAMPLE-tag-music",
+         "name": "Music"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.09
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.42
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.75
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.79
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.86
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.95
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-shibuya-cinema-rise",
+       "name": "Shibuya Cinema Rise",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6628,
+        "lon": 139.6963
+       },
+       "properties": {
+        "address": "Shibuya Cinema Rise, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-cinema",
+         "name": "Cinema"
+        },
+        {
+         "id": "SAMPLE-tag-film",
+         "name": "Film"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.53
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.37
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.19
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.7
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.69
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.1
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-nezu-museum",
+       "name": "Nezu Museum",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.662,
+        "lon": 139.7183
+       },
+       "properties": {
+        "address": "Nezu Museum, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-museum",
+         "name": "Museum"
+        },
+        {
+         "id": "SAMPLE-tag-garden",
+         "name": "Garden"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.54
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.48
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.2
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.41
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.6
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.21
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-meiji-jingu",
+       "name": "Meiji Jingu",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6764,
+        "lon": 139.6993
+       },
+       "properties": {
+        "address": "Meiji Jingu, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-shrine",
+         "name": "Shrine"
+        },
+        {
+         "id": "SAMPLE-tag-garden",
+         "name": "Garden"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.81
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.34
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.47
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.91
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.38
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.87
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-blue-note-tokyo",
+       "name": "Blue Note Tokyo",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6616,
+        "lon": 139.7168
+       },
+       "properties": {
+        "address": "Blue Note Tokyo, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-jazz-club",
+         "name": "Jazz club"
+        },
+        {
+         "id": "SAMPLE-tag-music",
+         "name": "Music"
+        }
+       ],
+       "query": {
+        "affinity": 0.75,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.24
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.63
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.9
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.75
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.34
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.36
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-disk-union-shimokitazawa",
+       "name": "Disk Union Shimokitazawa",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6613,
+        "lon": 139.6683
+       },
+       "properties": {
+        "address": "Disk Union Shimokitazawa, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-record-store",
+         "name": "Record store"
+        },
+        {
+         "id": "SAMPLE-tag-music",
+         "name": "Music"
+        }
+       ],
+       "query": {
+        "affinity": 0.71,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.81
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.56
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.47
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.25
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.96
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.49
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-ghibli-museum-mitaka",
+       "name": "Ghibli Museum, Mitaka",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6962,
+        "lon": 139.5704
+       },
+       "properties": {
+        "address": "Ghibli Museum, Mitaka, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-museum",
+         "name": "Museum"
+        },
+        {
+         "id": "SAMPLE-tag-animation",
+         "name": "Animation"
+        }
+       ],
+       "query": {
+        "affinity": 0.66,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.54
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.37
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.2
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.74
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.81
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.9
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-shinjuku-golden-gai",
+       "name": "Shinjuku Golden Gai",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.694,
+        "lon": 139.7035
+       },
+       "properties": {
+        "address": "Shinjuku Golden Gai, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-nightlife",
+         "name": "Nightlife"
+        },
+        {
+         "id": "SAMPLE-tag-live-house",
+         "name": "Live house"
+        }
+       ],
+       "query": {
+        "affinity": 0.62,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.14
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.64
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.8
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.32
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.04
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.57
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Tokyo",
+    "filter.tags": "SAMPLE-tag-ramen"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-ramen-shop-ebisu",
+       "name": "[sample] Ramen shop, Ebisu",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6467,
+        "lon": 139.71
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Ebisu, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.91
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.89
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.57
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.69
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.64
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.21
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-ramen-shop-shibuya",
+       "name": "[sample] Ramen shop, Shibuya",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6601,
+        "lon": 139.7006
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Shibuya, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.9
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.89
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.56
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.65
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.52
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.41
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-ramen-shop-shinjuku",
+       "name": "[sample] Ramen shop, Shinjuku",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6867,
+        "lon": 139.6987
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Shinjuku, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.66
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.58
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.32
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.58
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.94
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.91
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-ramen-shop-nakano",
+       "name": "[sample] Ramen shop, Nakano",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.7056,
+        "lon": 139.6659
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Nakano, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.8
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.23
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.46
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.2
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.47
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.76
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Tokyo",
+    "filter.tags": "SAMPLE-tag-sushi"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-sushi-counter-shibuya",
+       "name": "[sample] Sushi counter, Shibuya",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6586,
+        "lon": 139.7012
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Shibuya, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.26
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.85
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.92
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.17
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.16
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.57
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-sushi-counter-ginza",
+       "name": "[sample] Sushi counter, Ginza",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6717,
+        "lon": 139.765
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Ginza, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.08
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.87
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.74
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.39
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.78
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.6
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-sushi-counter-tsukiji",
+       "name": "[sample] Sushi counter, Tsukiji",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6655,
+        "lon": 139.7707
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Tsukiji, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.34
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.17
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.54
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.61
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.7
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-sushi-counter-shinjuku",
+       "name": "[sample] Sushi counter, Shinjuku",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6905,
+        "lon": 139.7003
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Shinjuku, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.54
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.37
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.2
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.74
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.81
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.9
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Tokyo",
+    "filter.tags": "SAMPLE-tag-coffee"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-kissaten-shimokitazawa",
+       "name": "[sample] Kissaten, Shimokitazawa",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.661,
+        "lon": 139.6672
+       },
+       "properties": {
+        "address": "[sample] Kissaten, Shimokitazawa, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.68
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.91
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.34
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.68
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.55
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.44
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-kissaten-jimbocho",
+       "name": "[sample] Kissaten, Jimbocho",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6957,
+        "lon": 139.7578
+       },
+       "properties": {
+        "address": "[sample] Kissaten, Jimbocho, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.93
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.55
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.59
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.75
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.51
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.88
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-coffee-stand-omotesando",
+       "name": "[sample] Coffee stand, Omotesando",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6686,
+        "lon": 139.7075
+       },
+       "properties": {
+        "address": "[sample] Coffee stand, Omotesando, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.73
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.46
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.39
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.23
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.1
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.99
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-tokyo-sample-kissaten-ginza",
+       "name": "[sample] Kissaten, Ginza",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.6718,
+        "lon": 139.7646
+       },
+       "properties": {
+        "address": "[sample] Kissaten, Ginza, Tokyo, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.26
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.63
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.92
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.87
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.7
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.75
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Kyoto",
+    "filter.tags": null
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-kyoto-kyoto-international-manga-museum",
+       "name": "Kyoto International Manga Museum",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0112,
+        "lon": 135.764
+       },
+       "properties": {
+        "address": "Kyoto International Manga Museum, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-museum",
+         "name": "Museum"
+        },
+        {
+         "id": "SAMPLE-tag-animation",
+         "name": "Animation"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.16
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.53
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.82
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.77
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.6
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.65
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-fushimi-inari-taisha",
+       "name": "Fushimi Inari Taisha",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 34.9671,
+        "lon": 135.7727
+       },
+       "properties": {
+        "address": "Fushimi Inari Taisha, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-shrine",
+         "name": "Shrine"
+        },
+        {
+         "id": "SAMPLE-tag-hiking",
+         "name": "Hiking"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.36
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.39
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.02
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.96
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.43
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.92
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-metro-kyoto-live-house",
+       "name": "Metro (Kyoto live house)",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0153,
+        "lon": 135.7716
+       },
+       "properties": {
+        "address": "Metro (Kyoto live house), Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-live-house",
+         "name": "Live house"
+        },
+        {
+         "id": "SAMPLE-tag-music",
+         "name": "Music"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.97
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.1
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.63
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.27
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.94
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.63
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-philosopher-s-path",
+       "name": "Philosopher's Path",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.027,
+        "lon": 135.7948
+       },
+       "properties": {
+        "address": "Philosopher's Path, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-walk",
+         "name": "Walk"
+        },
+        {
+         "id": "SAMPLE-tag-garden",
+         "name": "Garden"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.72
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.24
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.38
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.84
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.4
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.57
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-kinkaku-ji",
+       "name": "Kinkaku-ji",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0394,
+        "lon": 135.7292
+       },
+       "properties": {
+        "address": "Kinkaku-ji, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-temple",
+         "name": "Temple"
+        },
+        {
+         "id": "SAMPLE-tag-garden",
+         "name": "Garden"
+        }
+       ],
+       "query": {
+        "affinity": 0.75,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.43
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.61
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.09
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.61
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.96
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.93
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-arashiyama-bamboo-grove",
+       "name": "Arashiyama Bamboo Grove",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.017,
+        "lon": 135.6713
+       },
+       "properties": {
+        "address": "Arashiyama Bamboo Grove, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-walk",
+         "name": "Walk"
+        },
+        {
+         "id": "SAMPLE-tag-garden",
+         "name": "Garden"
+        }
+       ],
+       "query": {
+        "affinity": 0.71,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.12
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.31
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.79
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.27
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.54
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.83
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-kyoto-national-museum",
+       "name": "Kyoto National Museum",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 34.99,
+        "lon": 135.7727
+       },
+       "properties": {
+        "address": "Kyoto National Museum, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-museum",
+         "name": "Museum"
+        },
+        {
+         "id": "SAMPLE-tag-art",
+         "name": "Art"
+        }
+       ],
+       "query": {
+        "affinity": 0.66,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.9
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.89
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.56
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.61
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.4
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.62
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-nishiki-market",
+       "name": "Nishiki Market",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.005,
+        "lon": 135.7646
+       },
+       "properties": {
+        "address": "Nishiki Market, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-market",
+         "name": "Market"
+        },
+        {
+         "id": "SAMPLE-tag-shopping",
+         "name": "Shopping"
+        }
+       ],
+       "query": {
+        "affinity": 0.62,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.51
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.82
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.17
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.26
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.5
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.95
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Kyoto",
+    "filter.tags": "SAMPLE-tag-ramen"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-ramen-shop-kawaramachi",
+       "name": "[sample] Ramen shop, Kawaramachi",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0043,
+        "lon": 135.7692
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Kawaramachi, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.51
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.38
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.17
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.62
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.45
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.5
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-ramen-shop-karasuma",
+       "name": "[sample] Ramen shop, Karasuma",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0097,
+        "lon": 135.7678
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Karasuma, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.54
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.48
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.2
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.41
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.6
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.21
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-ramen-shop-kyoto-station",
+       "name": "[sample] Ramen shop, Kyoto Station",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 34.9858,
+        "lon": 135.7588
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Kyoto Station, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.8
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.12
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.46
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.52
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.68
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.45
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-ramen-shop-gion",
+       "name": "[sample] Ramen shop, Gion",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0037,
+        "lon": 135.775
+       },
+       "properties": {
+        "address": "[sample] Ramen shop, Gion, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-ramen-restaurant",
+         "name": "Ramen restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.85
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.45
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.51
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.73
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.65
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.38
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Kyoto",
+    "filter.tags": "SAMPLE-tag-sushi"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-sushi-counter-nishiki",
+       "name": "[sample] Sushi counter, Nishiki",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0049,
+        "lon": 135.7644
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Nishiki, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.67
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.8
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.33
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.97
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.64
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.33
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-sushi-counter-gion",
+       "name": "[sample] Sushi counter, Gion",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0039,
+        "lon": 135.7752
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Gion, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.91
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.22
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.57
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.66
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.9
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.35
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-sushi-counter-kyoto-station",
+       "name": "[sample] Sushi counter, Kyoto Station",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 34.9865,
+        "lon": 135.759
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Kyoto Station, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.73
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.46
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.39
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.23
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.1
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.99
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-sushi-counter-pontocho",
+       "name": "[sample] Sushi counter, Pontocho",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0053,
+        "lon": 135.7706
+       },
+       "properties": {
+        "address": "[sample] Sushi counter, Pontocho, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-sushi-restaurant",
+         "name": "Sushi restaurant"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.69
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.36
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.35
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.4
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.83
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.48
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "path": "/v2/insights",
+   "params": {
+    "filter.location.query": "Kyoto",
+    "filter.tags": "SAMPLE-tag-coffee"
+   },
+   "response": {
+    "success": true,
+    "results": {
+     "entities": [
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-kissaten-teramachi",
+       "name": "[sample] Kissaten, Teramachi",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0067,
+        "lon": 135.7678
+       },
+       "properties": {
+        "address": "[sample] Kissaten, Teramachi, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.93,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.11
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.42
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.77
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.86
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.1
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.55
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-kissaten-demachiyanagi",
+       "name": "[sample] Kissaten, Demachiyanagi",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0301,
+        "lon": 135.7727
+       },
+       "properties": {
+        "address": "[sample] Kissaten, Demachiyanagi, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.89,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.54
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.82
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.2
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.42
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.97
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.14
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-coffee-stand-gion",
+       "name": "[sample] Coffee stand, Gion",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0035,
+        "lon": 135.7744
+       },
+       "properties": {
+        "address": "[sample] Coffee stand, Gion, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.84,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.53
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.04
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.19
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.68
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.32
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.17
+          }
+         ]
+        }
+       }
+      },
+      {
+       "entity_id": "SAMPLE-place-kyoto-sample-kissaten-kawaramachi",
+       "name": "[sample] Kissaten, Kawaramachi",
+       "type": "urn:entity:place",
+       "location": {
+        "lat": 35.0072,
+        "lon": 135.7686
+       },
+       "properties": {
+        "address": "[sample] Kissaten, Kawaramachi, Kyoto, Japan (sample)"
+       },
+       "tags": [
+        {
+         "id": "SAMPLE-tag-coffee-shop-kissaten",
+         "name": "Coffee shop (kissaten)"
+        }
+       ],
+       "query": {
+        "affinity": 0.8,
+        "explainability": {
+         "signal.interests.entities": [
+          {
+           "entity_id": "SAMPLE-artist-radiohead",
+           "score": 0.13
+          },
+          {
+           "entity_id": "SAMPLE-artist-ryuichi-sakamoto",
+           "score": 0.97
+          },
+          {
+           "entity_id": "SAMPLE-artist-cornelius",
+           "score": 0.79
+          },
+          {
+           "entity_id": "SAMPLE-movie-lost-in-translation",
+           "score": 0.3
+          },
+          {
+           "entity_id": "SAMPLE-movie-spirited-away",
+           "score": 0.29
+          },
+          {
+           "entity_id": "SAMPLE-movie-tampopo",
+           "score": 0.7
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

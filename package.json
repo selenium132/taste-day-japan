@@ -1,0 +1,14 @@
+{
+  "name": "taste-day-japan",
+  "version": "0.1.0",
+  "description": "A one-day itinerary agent for visitors to Japan, grounded in Qloo's taste graph",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dev": "node dev-server.js",
+    "record": "node scripts/record.js"
+  },
+  "engines": { "node": ">=22" }
+}

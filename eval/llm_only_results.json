@@ -1,0 +1,118 @@
+{
+  "model": "gemini-3.5-flash",
+  "started_utc": "2026-10-03T05:31:45.294Z",
+  "prompt_template": "Plan a one-day itinerary in <city>, Japan for a traveler with this taste.\nFavorite artists: <artists>. Favorite films: <films>. Food they like: <food>.\nGive exactly 5 stops (morning, lunch, afternoon, dinner, evening). For each stop give the real place name and its neighborhood, and one sentence on why it fits this traveler's taste.\nAnswer with JSON only: [{\"slot\":\"morning\",\"name\":\"...\",\"area\":\"...\",\"reason\":\"...\"}, ...]",
+  "results": [
+    {
+      "id": "T1",
+      "city": "Tokyo",
+      "asked_utc": "2026-10-03T05:32:19.013Z",
+      "stops": [
+        {
+          "slot": "morning",
+          "name": "Chatei Hatou",
+          "area": "Shibuya",
+          "reason": "This legendary, dimly-lit kissaten serves exquisite hand-drip coffee in a quiet, contemplative atmosphere that mirrors the minimalist, ambient aesthetic of Ryuichi Sakamoto."
+        },
+        {
+          "slot": "lunch",
+          "name": "Sobahouse Konjiki Hototogisu",
+          "area": "Shinjuku",
+          "reason": "A Michelin-starred ramen destination crafting complex, innovative clam-infused broths that will satisfy both your ramen craving and your appreciation for avant-garde craftsmanship."
+        },
+        {
+          "slot": "afternoon",
+          "name": "Daikanyama T-Site",
+          "area": "Daikanyama",
+          "reason": "An architecturally stunning cultural hub where you can browse an incredible selection of design books and rare vinyl, appealing directly to the artistic sensibilities of a Radiohead fan."
+        },
+        {
+          "slot": "dinner",
+          "name": "Omoide Yokocho",
+          "area": "Shinjuku",
+          "reason": "This narrow, atmospheric alleyway filled with tiny yakitori stalls offers a moody, neon-drenched dining experience that feels like stepping directly into a cinematic Tokyo film frame."
+        },
+        {
+          "slot": "evening",
+          "name": "New York Bar",
+          "area": "Shinjuku",
+          "reason": "Located atop the Park Hyatt, this iconic jazz bar is the ultimate pilgrimage for fans of 'Lost in Translation', offering melancholic night views of the glittering Tokyo skyline."
+        }
+      ]
+    },
+    {
+      "id": "T2",
+      "city": "Kyoto",
+      "asked_utc": "2026-10-03T05:32:49.488Z",
+      "stops": [
+        {
+          "slot": "morning",
+          "name": "Kennin-ji Temple",
+          "area": "Gion",
+          "reason": "The temple's stunning Zen gardens and graphic 'Twin Dragons' ceiling painting blend spiritual mysticism with a bold visual design that appeals to both Spirited Away and Cornelius fans."
+        },
+        {
+          "slot": "lunch",
+          "name": "Men-ya Inoichi",
+          "area": "Shimogyo-ku",
+          "reason": "This acclaimed ramen shop serves meticulously crafted, dashi-based ramen, embodying the obsessive pursuit of noodle perfection celebrated in the film Tampopo."
+        },
+        {
+          "slot": "afternoon",
+          "name": "Otagi Nenbutsu-ji Temple",
+          "area": "Arashiyama",
+          "reason": "With its 1,200 whimsical, moss-covered stone statues, each with unique and quirky expressions, this temple captures the playful, otherworldly spirit of the deities in Spirited Away."
+        },
+        {
+          "slot": "dinner",
+          "name": "Izuju",
+          "area": "Gion",
+          "reason": "This historic establishment specializes in traditional Kyoto-style sushi like sabazushi, offering a nostalgic and deeply authentic culinary experience that fits the food-loving soul of Tampopo."
+        },
+        {
+          "slot": "evening",
+          "name": "Club Metro",
+          "area": "Sakyo-ku",
+          "reason": "As a legendary hub for Kyoto's underground electronic and indie music scenes, this venue's avant-garde atmosphere perfectly resonates with the experimental, genre-defying style of Cornelius."
+        }
+      ]
+    },
+    {
+      "id": "T3",
+      "city": "Tokyo",
+      "asked_utc": "2026-10-03T05:33:20.173Z",
+      "stops": [
+        {
+          "slot": "morning",
+          "name": "Fuglen Tokyo",
+          "area": "Tomigaya",
+          "reason": "Start your day with world-class specialty coffee in a beautifully designed, mid-century modern space located in the trendy neighborhood that birthed the Shibuya-kei music scene."
+        },
+        {
+          "slot": "lunch",
+          "name": "Tsuta",
+          "area": "Yoyogi-Uehara",
+          "reason": "Experience the ultimate quest for ramen perfection at this Michelin-starred establishment, embodying the obsessive culinary devotion celebrated in the film Tampopo."
+        },
+        {
+          "slot": "afternoon",
+          "name": "Tower Records Shibuya",
+          "area": "Shibuya",
+          "reason": "Explore the massive vinyl and release sections of this iconic music store, which features dedicated spaces for Tokyo music legends Cornelius and Ryuichi Sakamoto."
+        },
+        {
+          "slot": "dinner",
+          "name": "Taimeiken",
+          "area": "Nihonbashi",
+          "reason": "Dine at the historic restaurant where director Juzo Itami famously collaborated to create the iconic, runny 'Tampopo Omurice' featured in the film."
+        },
+        {
+          "slot": "evening",
+          "name": "Bar Music",
+          "area": "Shibuya",
+          "reason": "Wind down at this intimate, audiophile-friendly venue that perfectly bridges your tastes by serving exceptional coffee and drinks alongside a meticulously curated vinyl soundtrack."
+        }
+      ]
+    }
+  ]
+}

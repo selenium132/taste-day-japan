@@ -1,0 +1,5 @@
+[
+  { "id": "T1", "city": "Tokyo", "story": "Third visit to Japan. Has done the famous sights; wants a day shaped by taste.", "artists": ["Radiohead", "Ryuichi Sakamoto"], "movies": ["Lost in Translation"], "food": ["ramen", "coffee"] },
+  { "id": "T2", "city": "Kyoto", "story": "Second visit. Skipped the temples last time.", "artists": ["Cornelius"], "movies": ["Spirited Away", "Tampopo"], "food": ["sushi", "ramen"] },
+  { "id": "T3", "city": "Tokyo", "story": "Third visit; has done Shibuya Crossing and Senso-ji.", "artists": ["Cornelius", "Ryuichi Sakamoto"], "movies": ["Tampopo"], "food": ["coffee"] }
+]
